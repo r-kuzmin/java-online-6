@@ -14,7 +14,19 @@ public class FisicalBook extends Book {
 		super();
 		this.storage = storage;
 	}
-
+	
+	@Override
+	public FisicalBook clone() {
+		
+		FisicalBook image = new FisicalBook(storage);
+		
+		image.setId(getId());
+		image.setName(getName());
+		image.setAuthors(getAuthors());
+		
+		return image;
+	}
+	
 	public Storage getStorage() {
 		return storage;
 	}

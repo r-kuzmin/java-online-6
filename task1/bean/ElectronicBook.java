@@ -15,6 +15,18 @@ public class ElectronicBook extends Book {
 		this.path = path;
 	}
 
+	@Override
+	public ElectronicBook clone() {
+		
+		ElectronicBook image = new ElectronicBook(path);
+		
+		image.setId(getId());
+		image.setName(getName());
+		image.setAuthors(getAuthors());
+		
+		return image;
+	}
+
 	public String getPath() {
 		return path;
 	}

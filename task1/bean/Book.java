@@ -3,7 +3,7 @@ package by.epam.training.task1.bean;
 import java.io.Serializable;
 import java.util.Arrays;
 
-public abstract class Book implements Serializable {
+public abstract class Book implements Cloneable, Serializable {
 	
 	private static final long serialVersionUID = -4609390115615499866L;
 	
@@ -21,7 +21,7 @@ public abstract class Book implements Serializable {
 		this.name = name;
 		this.authors = authors;
 	}
-
+	
 	public int getId() {
 		return id;
 	}

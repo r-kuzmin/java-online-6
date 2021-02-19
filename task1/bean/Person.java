@@ -2,13 +2,7 @@ package by.epam.training.task1.bean;
 
 import java.io.Serializable;
 
-/**
- * Люди, авторы книг.
- * 
- * @author R. Kuzmin
- *
- */
-public class Person implements Serializable {
+public class Person implements Cloneable, Serializable {
 	
 	private static final long serialVersionUID = -5265245395614539010L;
 	
@@ -31,6 +25,11 @@ public class Person implements Serializable {
 		this.name = name;
 	}
 
+	@Override
+	public Person clone() {
+		return new Person(name);
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
